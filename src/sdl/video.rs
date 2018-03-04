@@ -169,6 +169,7 @@ pub mod ll {
         pub fn SDL_DisplayFormatAlpha(surface: *mut SDL_Surface) -> *mut SDL_Surface;
         pub fn SDL_SetColorKey(surface: *mut SDL_Surface, flag: uint32_t, key: uint32_t) -> c_int;
         pub fn SDL_SetAlpha(surface: *mut SDL_Surface, flag: uint32_t, alpha: uint8_t) -> c_int;
+        pub fn SDL_GetClipRect(surface: *mut SDL_Surface, rect: *mut SDL_Rect);
         pub fn SDL_SetClipRect(surface: *mut SDL_Surface, rect: *const SDL_Rect);
         pub fn SDL_UpperBlit(src: *mut SDL_Surface,
                              srcrect: *mut SDL_Rect,
@@ -661,7 +662,7 @@ impl Surface {
         };
 
         unsafe {
-            ll::SDL_SetClipRect(self.raw,
+            ll::SDL_GetClipRect(self.raw,
                                 mem::transmute(&rect));
         }
 
