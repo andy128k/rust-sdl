@@ -9,8 +9,7 @@ pub mod ll {
     #![allow(non_camel_case_types)]
 
     use std::mem;
-    use libc::{c_void, c_int, c_uint, c_uchar, uint8_t, uint16_t, int16_t};
-    use libc::types::os::arch::c95::c_schar;
+    use libc::{c_void, c_int, c_uint, c_uchar, c_schar, uint8_t, uint16_t, int16_t};
     pub use keysym::*;
 
     pub type SDL_EventType = c_uint;

@@ -1,7 +1,6 @@
 use std::mem;
 use libc::{c_int, c_float};
 use std::ptr;
-use rand::Rng;
 use std::slice;
 use std::ffi::CString;
 use std::path::Path;
@@ -17,8 +16,7 @@ pub mod ll {
     use Rect;
 
     use libc::{c_void, c_uint, c_int, c_float, c_uchar, uint8_t, uint16_t};
-    use libc::{uint32_t, int32_t};
-    use libc::types::os::arch::c95::c_schar;
+    use libc::{uint32_t, int32_t, c_schar};
 
     pub type SDL_Rect = Rect;
 
@@ -207,7 +205,6 @@ impl Drop for Surface {
     }
 }
 
-#[allow(raw_pointer_derive)]
 #[derive(PartialEq, Copy, Clone)]
 pub struct Palette {
     pub raw: *mut ll::SDL_Palette

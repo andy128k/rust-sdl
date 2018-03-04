@@ -7,8 +7,7 @@ use get_error;
 pub mod ll {
     #![allow(non_camel_case_types)]
 
-    use libc::{c_void, c_int, uint8_t, int16_t};
-    use libc::types::os::arch::c95::c_schar;
+    use libc::{c_void, c_int, uint8_t, int16_t, c_schar};
 
     pub type SDL_Joystick = c_void;
 

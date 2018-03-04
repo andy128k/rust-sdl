@@ -1,5 +1,3 @@
-#![allow(raw_pointer_derive)]
-
 extern crate libc;
 extern crate rand;
 extern crate num;
