@@ -180,6 +180,7 @@ pub mod ll {
         pub fn SDL_SetGammaRamp(r: *const uint16_t, g: *const uint16_t, b: *const uint16_t) -> c_int;
         pub fn SDL_GetGammaRamp(r: *mut uint16_t, g: *mut uint16_t, b: *mut uint16_t) -> c_int;
         pub fn SDL_RWFromFile(file: *const c_schar, mode: *const c_schar) -> *mut SDL_RWops;
+        pub fn SDL_RWFromConstMem(mem: *const c_void, size: c_int) -> *mut SDL_RWops;
         pub fn SDL_LoadBMP_RW(src: *mut SDL_RWops, freesrc: c_int) -> *mut SDL_Surface;
         pub fn SDL_SaveBMP_RW(surface: *mut SDL_Surface, dst: *mut SDL_RWops, freedst: c_int) -> c_int;
         pub fn SDL_GL_SwapBuffers();
