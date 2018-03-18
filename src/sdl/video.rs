@@ -645,9 +645,9 @@ impl Surface {
         }
     }
 
-    pub fn set_clip_rect(&self, rect: &Rect) {
+    pub fn set_clip_rect(&self, rect: Option<&Rect>) {
         unsafe {
-            ll::SDL_SetClipRect(self.raw, rect);
+            ll::SDL_SetClipRect(self.raw, match rect { Some(r) => r, None => ptr::null() });
         }
     }
 
